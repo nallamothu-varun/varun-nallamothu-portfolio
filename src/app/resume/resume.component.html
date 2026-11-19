@@ -1,0 +1,53 @@
+<div class="page container">
+  <header class="page-header">
+    <h1 class="page-title">My <span class="gradient-text">Resume</span></h1>
+    <p class="page-sub">Where I've worked, what I've studied and the tools I rely on.</p>
+  </header>
+
+  <section>
+    <h2 class="section-heading">Work Experience</h2>
+    <div class="timeline">
+      <article class="timeline-item" *ngFor="let job of experience">
+        <span class="timeline-dot"></span>
+        <div class="glass-card job">
+          <div class="logo" [class.dark]="job.darkLogo"><img [class.zoom]="job.zoom" [src]="job.logo" [alt]="job.company + ' logo'"></div>
+          <div class="job-body">
+            <span class="period">{{ job.period }}</span>
+            <h3>{{ job.role }}</h3>
+            <h4>{{ job.company }} &middot; {{ job.location }}</h4>
+            <p>{{ job.text }}</p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-heading">Education</h2>
+    <div class="row g-4">
+      <div class="col-lg-6" *ngFor="let edu of education">
+        <div class="glass-card job h-100">
+          <div class="logo"><img [class.zoom]="edu.zoom" [src]="edu.logo" [alt]="edu.school + ' logo'"></div>
+          <div class="job-body">
+            <span class="period">{{ edu.period }}</span>
+            <h3>{{ edu.degree }}</h3>
+            <h4>{{ edu.school }}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-heading">Skills &amp; Expertise</h2>
+    <div class="skill-grid">
+      <div class="glass-card skill" *ngFor="let s of skills">
+        <div class="plate" [class.plate-icon]="!s.img">
+          <img *ngIf="s.img" [class.zoom]="s.zoom" [src]="s.img" [alt]="s.name">
+          <i *ngIf="s.icon" [class]="s.icon"></i>
+        </div>
+        <span>{{ s.name }}</span>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,35 @@
+.channel {
+  display: block;
+  text-align: center;
+  padding: 2rem 1rem;
+  text-decoration: none;
+  color: inherit;
+  .icon {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 56px; height: 56px; border-radius: 16px; font-size: 1.4rem;
+    color: #fff; background: var(--gradient);
+    margin-bottom: 1rem;
+  }
+  h3 { font-size: 1.1rem; font-weight: 700; }
+  p { color: var(--c-muted); margin: 0; word-break: break-word; }
+}
+
+.cta {
+  display: inline-block;
+  padding: .9rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: var(--gradient);
+  box-shadow: 0 8px 24px rgba(129, 140, 248, .35);
+  transition: transform .2s, box-shadow .2s;
+  i { margin-left: .4rem; }
+  &:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(236, 72, 153, .4); }
+}
+
+.map {
+  overflow: hidden;
+  &:hover { transform: none; }
+  iframe { display: block; border: 0; filter: invert(.9) hue-rotate(180deg) saturate(.8); }
+}

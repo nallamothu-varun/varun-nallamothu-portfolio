@@ -1,0 +1,34 @@
+<div class="page container">
+  <header class="page-header">
+    <h1 class="page-title">Selected <span class="gradient-text">projects</span></h1>
+    <p class="page-sub">A few of the applications I've helped build, and the technologies behind them.</p>
+  </header>
+
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-6" *ngFor="let p of projects">
+      <article class="glass-card project h-100">
+        <div class="banner" [class.light]="p.banner === 'light'">
+          <img [src]="p.image" [alt]="p.title + ' logo'">
+        </div>
+        <div class="body">
+          <h2>{{ p.title }}</h2>
+          <h3>{{ p.subtitle }}</h3>
+          <p>{{ p.description }}</p>
+          <div class="tech">
+            <span class="tech-label">Built with</span>
+            <span class="tag" *ngFor="let t of p.tags">{{ t }}</span>
+          </div>
+          <a *ngIf="p.link" class="link" [href]="p.link" target="_blank" rel="noopener">
+            {{ p.linkLabel || 'View project' }} <i class="fa fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="cta-card glass-card text-center">
+    <h2>Have something in mind?</h2>
+    <p>I'm always happy to talk about new projects and opportunities.</p>
+    <a routerLink="/contact" class="cta">Get in touch <i class="fa fa-arrow-right"></i></a>
+  </div>
+</div>
