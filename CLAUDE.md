@@ -30,3 +30,7 @@ Single-page Angular 16 portfolio with a dark theme, using Bootstrap 5, Font Awes
 
 - Spec files are default CLI scaffolds; `app.component.spec.ts` is stale (expects title `MyProfile` and a `.content span` that don't exist) and will fail.
 - TypeScript is `strict` with `strictTemplates`, `noPropertyAccessFromIndexSignature`, and `noImplicitReturns`.
+
+## Deployment
+
+Deployed to GitHub Pages at https://nallamothu-varun.github.io/varun-nallamothu-portfolio/ by `.github/workflows/deploy-pages.yml` on every push to `main`. It builds with `--base-href /varun-nallamothu-portfolio/` (the site lives under the repo-name path), copies `index.html` to `404.html` as the SPA fallback so direct visits to `/resume` etc. work, and publishes `dist/my-profile`. Don't pass `--base-href` for local builds. Under Git Bash on Windows a leading `/` argument is also rewritten to a Windows path.
