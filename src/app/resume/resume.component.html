@@ -2,6 +2,7 @@
   <header class="page-header">
     <h1 class="page-title">My <span class="gradient-text">Resume</span></h1>
     <p class="page-sub">Where I've worked, what I've studied and the tools I rely on.</p>
+    <a class="btn-gradient" [href]="resumeUrl" download="Varun_Nallamothu_Resume.pdf">Download resume <i class="fa fa-download"></i></a>
   </header>
 
   <section>
@@ -10,7 +11,10 @@
       <article class="timeline-item" *ngFor="let job of experience">
         <span class="timeline-dot"></span>
         <div class="glass-card job">
-          <div class="logo" [class.dark]="job.darkLogo"><img [class.zoom]="job.zoom" [src]="job.logo" [alt]="job.company + ' logo'"></div>
+          <div class="logo" [class.dark]="job.darkLogo">
+              <img *ngIf="job.logo" [class.zoom]="job.zoom" [src]="job.logo" [alt]="job.company + ' logo'">
+              <i *ngIf="job.icon" [class]="job.icon"></i>
+            </div>
           <div class="job-body">
             <span class="period">{{ job.period }}</span>
             <h3>{{ job.role }}</h3>
